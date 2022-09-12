@@ -1,5 +1,5 @@
 import  express from "express";
-import { MongoClient, ServerApiVersion } from "mongodb";
+import { MongoClient } from "mongodb";
 import joi from "joi";
 import dotenv from 'dotenv';
 import cors from "cors";
@@ -29,7 +29,7 @@ const signSchema = joi.object({
 }).with("password", "repeat_password");
 
 const loginSchema = joi.object({
-    name:joi.string().required().empty(""),
+    email:joi.string().email().required().empty(""),
     password:joi.string().required()
 });
 
@@ -40,12 +40,12 @@ const transactionSchema = joi.object({
 })
 
 
-server.post('/sign', async (req, res) => {
+server.post('/sign', async(req, res) => {
     const {name, email, password, repeat_password} = req.body;
 
     const sign = signSchema.validate({name, email, password, repeat_password});
     if(sign.error){
-     return res.status(401).send(sign.error.details);
+     return res.status(401).send(sign.error.details.map((detail) => detail.message));
     }
 
     
@@ -53,7 +53,7 @@ server.post('/sign', async (req, res) => {
         const user = await db.collection('users').findOne({name});
         console.log(user);
         if(user) {
-           return res.status(401).send("usuário ja existe");
+           return res.status(401).send("Usuário ja existe");
         }
 
         const passwordHash = bcrypt.hashSync(password,10);
@@ -67,23 +67,24 @@ server.post('/sign', async (req, res) => {
 
 
     } catch(error){
-        console.log(error);
+        console.log(error.message);
     }
     
 
     res.send('inseriu usuário');
 })
 
-server.post('/sign-up', async (req, res) =>{
-    const {name, password} = req.body;
+server.post('/sign-up', async(req, res) => {
+    const {email, password} = req.body;
 
-    const login = loginSchema.validate({name,password});
+    const login = loginSchema.validate({email,password});
     if(login.error){
-        return res.status(401).send(login.error.details);
+        return res.status(401).send(login.error.details.map((detail) => detail.message));
     }
 
     try {
-        const user = await db.collection('users').findOne({name});
+        const user = await db.collection('users').findOne({email});
+        console.log(user);
         if(user && bcrypt.compareSync(password,user.password)){
             const token = uuid();
 
@@ -101,7 +102,8 @@ server.post('/sign-up', async (req, res) =>{
     }
 
     res.sendStatus("ok")
-})
+}
+)
 
 server.get('/', async (req, res) => {
     const { authorization } = req.headers;
@@ -150,7 +152,7 @@ server.post('/transactions', async (req, res) =>{
     const validation = transactionSchema.validate({value, description, type})
 
     if(validation.error){
-        return res.status(401).send(validation.error.details);
+        return res.status(401).send(validation.error.details.map((detail) => detail.message));
     }
 
     const token = authorization?.replace('Bearer ', "")
