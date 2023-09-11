@@ -1,6 +1,7 @@
 import db from "../connection.js";
-import { signSchema } from "../schemas/AuthSchema.js";
+import { loginSchema, signSchema } from "../schemas/AuthSchema.js";
 import bcrypt from "bcrypt";
+import { v4 as uuid } from "uuid";
 
 async function signIn(req, res) {
   const { name, email, password, repeat_password } = req.body;

@@ -2,7 +2,6 @@ import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 import AuthRoutes from "./src/routers/AuthRoutes.js";
-AuthRoutes;
 
 dotenv.config();
 const server = express();
