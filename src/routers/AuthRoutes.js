@@ -1,5 +1,10 @@
 import express from "express";
-import { signIn, singUp } from "../controllers/AuthControllers.js";
+import {
+  signIn,
+  signInWithGoogle,
+  signUpWithGoogle,
+  singUp,
+} from "../controllers/AuthControllers.js";
 import {
   getTransactions,
   postTransaction,
@@ -10,7 +15,11 @@ const routes = express.Router();
 
 routes.post("/sign", signIn);
 
+routes.post("/sign-in-google", signInWithGoogle);
+
 routes.post("/sign-up", singUp);
+
+routes.post("/sign-up-google", signUpWithGoogle);
 
 routes.get("/", authUser, getTransactions);
 
