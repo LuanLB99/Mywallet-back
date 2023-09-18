@@ -67,6 +67,8 @@ $ docker-compose up --build
 
 <br><br>
 
+## Rest API
+
 ### `POST /sign`
 
 #### Request
