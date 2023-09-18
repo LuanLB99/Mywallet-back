@@ -178,14 +178,16 @@ $ docker-compose up --build
       "date": "18/09"
     }
 
-
-    ## Tech Stack
+## Tech Stack
 
 Languages:<br>
 
 <p align="center">
+
   <img src="https://img.shields.io/badge/javascript%20-%23323330.svg?&style=for-the-badge&logo=javascript&logoColor=%23F7DF1E"/>
+
 </p>
+
 <br>
 
 The following tools and frameworks were used in the construction of the project:<br>
@@ -194,17 +196,20 @@ The following tools and frameworks were used in the construction of the project:
 ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
 
 <br>
-  Database:
-  ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
+  Database:<br>
+
+![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
 
 <br>
 <br>
-  Hosting/SaaS:
+  Hosting/SaaS:<br>
+  
   ![Firebase](https://img.shields.io/badge/firebase-%23039BE5.svg?style=for-the-badge&logo=firebase)
 
 <br>
 
-Version Control:
+Version Control: <br>
+
 ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
 <br><br>
 
