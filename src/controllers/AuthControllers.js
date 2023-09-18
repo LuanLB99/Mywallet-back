@@ -89,7 +89,7 @@ async function singUp(req, res) {
         userId: user._id,
         token,
       });
-      return res.status(201).send(token);
+      return res.status(200).send(token);
     } else {
       return res.status(401).send("Usuário e/ou senha incorretos!");
     }
@@ -115,7 +115,7 @@ async function signUpWithGoogle(req, res) {
       token,
     });
 
-    return res.status(201).send(token);
+    return res.status(200).send(token);
   } catch (error) {
     return res.status(401).send("Usuário e/ou senha incorretos!");
   }

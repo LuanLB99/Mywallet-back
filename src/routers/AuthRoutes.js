@@ -13,7 +13,7 @@ import { authUser } from "../middleware/AuthMiddleware.js";
 
 const routes = express.Router();
 
-routes.get("/status", async (req, res) => res.send("Neji-Sama"));
+routes.get("/status", async (req, res) => res.send("OK"));
 
 routes.post("/sign", signIn);
 

@@ -51,7 +51,14 @@ async function postTransaction(req, res) {
     return res.sendStatus(404);
   }
 
-  res.sendStatus(200);
+  res.status(200).send({
+    name: user.name,
+    userId: user._id,
+    value,
+    description,
+    type,
+    date: dayjs().format("DD/MM"),
+  });
 }
 
 export { getTransactions, postTransaction };
