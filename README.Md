@@ -23,8 +23,6 @@
   <a style='color:inherit' href="#features">Features</a> •
   <a style='color:inherit' href="#rest">REST API</a> •
   <a style='color:inherit' href="#tech">Tech Stack</a> •
-  <a style='color:inherit' href="#deploy">Deploy</a> •
-  <a style='color:inherit' href="#contributors">Contributors</a> •
   <a style='color:inherit' href="#author">Author</a>
 </p>
 
