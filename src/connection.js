@@ -8,7 +8,7 @@ const mongoClient = new MongoClient(
   "mongodb+srv://user:user123@mywallet.rkxayzw.mongodb.net/?retryWrites=true&w=majority"
 );
 await mongoClient.connect().then(() => {
-  db = mongoClient.db("MyWallet");
+  db = mongoClient.db("mywallet");
 });
 
 export default db;
