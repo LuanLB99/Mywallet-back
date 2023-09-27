@@ -17,7 +17,7 @@
  <a href="https://github.com/LuanLB99/Mywallet-front" target='_blank'>
     ✔️ Click here to view the front-end repository.
   </a>
-  <a href="https://mywallet-front-o5zutbvvf-luanlb99.vercel.app/main" target='_blank'>
+  <a href="https://mywallet-front-o5zutbvvf-luanlb99.vercel.app" target='_blank'>
     ✔️ Click here to view the front-end Deploy.
   </a>
 </p>
