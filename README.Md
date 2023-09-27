@@ -9,14 +9,14 @@
 ## About
 
 <p>
-  API to provide data for the My Wallet app.<br><br>
-  <a href="https://github.com/LuanLB99/Mywallet-front" target='_blank'>
-    ✔️ Click here to view the front-end repository.
-  </a>
+ API to provide data to the My Wallet application in which the user can add their recent financial inflows and outflows.<br><br>
+ 
 </p>
 
 <p>
-  API to provide data for the My Wallet app.<br><br>
+ <a href="https://github.com/LuanLB99/Mywallet-front" target='_blank'>
+    ✔️ Click here to view the front-end repository.
+  </a>
   <a href="https://mywallet-front-o5zutbvvf-luanlb99.vercel.app/main" target='_blank'>
     ✔️ Click here to view the front-end Deploy.
   </a>
